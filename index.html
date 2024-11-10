@@ -33,11 +33,14 @@
 
       h1 {
         font-size: 1.5rem;
-        color: #008060;
-        margin-bottom: 20px;
+        background: #008060bd;
         text-align: center;
         border-bottom: 1px solid #ddd;
-        padding-bottom: 10px;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        border-radius: 8px;
+        color: #fff;
+        margin-bottom: 20px;
       }
 
       ul {
@@ -71,8 +74,11 @@
         outline: none;
       }
 
+      input[type="text"] {
+        border: solid 0.5px #0080002b !important;
+      }
+
       button.copy {
-        background-color: #008060;
         color: #fff;
         border: none;
         padding: 6px 10px;
@@ -83,7 +89,8 @@
       }
 
       button.copy:hover {
-        background-color: #008060;
+        box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.24),
+          0 23px 64px 0 rgba(0, 0, 0, -0.81);
       }
 
       a.redirectLink {
