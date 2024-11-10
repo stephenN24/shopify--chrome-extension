@@ -5,6 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ShopifyXBoostInfo</title>
     <script defer type="module" src="/assets/index.js"></script>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        background-color: #f4f6f8;
+        color: #333;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+
+      #popup {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+        width: 100%;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+        color: #008060;
+        margin-bottom: 20px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+      }
+
+      ul {
+        list-style-type: none;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .title {
+        font-weight: bold;
+        margin-right: 10px;
+        width: 150px;
+        color: #555;
+      }
+
+      input[type="text"] {
+        flex: 1;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        background-color: #f7f7f7;
+        color: #333;
+      }
+
+      input[type="text"]:focus {
+        border-color: #008060;
+        outline: none;
+      }
+
+      button.copy {
+        background-color: #008060;
+        color: #fff;
+        border: none;
+        padding: 6px 10px;
+        margin-left: 8px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button.copy:hover {
+        background-color: #008060;
+      }
+
+      a.redirectLink {
+        color: #008060;
+        text-decoration: none;
+        margin-left: 8px;
+        transition: color 0.3s ease;
+      }
+
+      a.redirectLink:hover {
+        color: #008060;
+      }
+
+      .alert {
+        display: none;
+      }
+
+      body {
+        padding-inline: 5px !important;
+      }
+    </style>
     <link rel="stylesheet" crossorigin href="/assets/index.css" />
   </head>
 
