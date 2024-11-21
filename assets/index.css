@@ -43,10 +43,10 @@ a {
 
 input,
 a {
-  border: 1px dotted #525252a3;
   padding: 5px;
-  border-radius: 10px;
+  border-radius: 5px;
   max-width: 170px;
+  border: solid 0.5px #0080002b !important;
 }
 
 input::selection {

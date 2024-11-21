@@ -19,6 +19,29 @@
         font-family: "Poppins", sans-serif;
       }
 
+      ::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        background-color: #f5f5f5;
+      }
+
+      ::-webkit-scrollbar {
+        width: 10px;
+        background-color: #f5f5f5;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: rgba(99, 199, 239, 0.912);
+
+        background-image: -webkit-gradient(
+          linear,
+          0 0,
+          0 100%,
+          color-stop(0.5, rgba(255, 255, 255, 0.2)),
+          color-stop(0.5, transparent),
+          to(transparent)
+        );
+      }
+
       body {
         background-color: #f4f6f8;
         color: #333;
@@ -47,6 +70,13 @@
         border-radius: 8px;
         color: #fff;
         margin-bottom: 20px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px,
+          rgba(0, 0, 0, 0.06) 0px 1px 1px 0px;
+      }
+
+      h1 > svg {
+        width: 27px;
+        margin-right: 9px;
       }
 
       ul {
@@ -81,10 +111,13 @@
       }
 
       input[type="text"] {
-        border: solid 0.5px #0080002b !important;
+        border: solid 0.5px #379dde0a !important;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px,
+          rgba(0, 0, 0, 0.06) 0px 1px 1px 0px;
       }
 
       button.copy {
+        min-width: 75px;
         color: #fff;
         border: none;
         padding: 6px 10px;
@@ -92,6 +125,8 @@
         border-radius: 4px;
         cursor: pointer;
         transition: background-color 0.3s ease;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px,
+          rgba(0, 0, 0, 0.06) 0px 1px 1px 0px;
       }
 
       button.copy:hover {
@@ -100,10 +135,15 @@
       }
 
       a.redirectLink {
-        color: #008060;
+        color: #068396;
         text-decoration: none;
         margin-left: 8px;
         transition: color 0.3s ease;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        max-height: 25px;
       }
 
       a.redirectLink:hover {
