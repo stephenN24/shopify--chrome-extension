@@ -5,11 +5,11 @@ const handleCopyToClipboard = () => {
   const buttons = document.querySelectorAll("button.copy");
   buttons.forEach((button) => {
     button.addEventListener("click", (e) => {
-      const parent = e.target.parentElement;
-      parent.querySelector("input").select();
+      button.closest("li").querySelector("input").select();
       document.execCommand("copy");
       button.textContent = "Copied!";
-      button.style.background = "#0c66e4";
+      button.style.backgroundImage =
+        "linear-gradient(160deg, #0093e9 0%, #80d0c7 100%)";
       button.style.color = "white";
     });
   });
@@ -33,7 +33,7 @@ const buildInfoToCopyHTML = (info) => {
   for (let i of info) {
     const [title, value] = i.split("->");
     html += `<li>
-            <span class="title">${title}: </span>
+            <span class="title">${capitalizeFirstLetter(title)} </span>
             <input type="text" value="${value}" readonly>
             <button class="copy">${copySVG}</button></li>`;
   }
@@ -46,7 +46,9 @@ const buildInfoToRedirectHTML = (info) => {
   for (let i of info) {
     const [title, value] = i.split("->");
     html += `<li>
-            <span class="title">${title}: &#128279;</span>
+            <span class="title">${capitalizeFirstLetter(
+              title.replace("_", " ")
+            )} &#128279;</span>
             <a class="redirectLink" data-url=${value} href="#">${value}</a>
             </li>`;
   }
@@ -139,7 +141,7 @@ const prepareInfo = async (data) => {
   for (let key in redirectlinks) {
     if (key === "preview_link") {
       info.shopify.copy.push(
-        `${capitalizeFirstLetter(key)}->${redirectlinks[key]}`
+        `${capitalizeFirstLetter(key.replace("_", " "))}->${redirectlinks[key]}`
       );
     } else {
       info.shopify.redirect.push(
@@ -231,5 +233,9 @@ window.addEventListener("load", () => {
 });
 
 function capitalizeFirstLetter(val) {
-  return String(val).charAt(0).toUpperCase() + String(val).slice(1);
+  if (typeof val !== "string") return "";
+  return val
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
 }
