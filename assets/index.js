@@ -137,6 +137,10 @@ const prepareInfo = async (data) => {
     `Theme Code Editor->https://admin.shopify.com/store/${shopWithoutDomain}/themes/${shopifyInfo.theme.id}`
   );
 
+  info.boost.redirect.push(
+    `Dashboard->https://dashboard.bc-solutions.net/sync-hook-details/${shopifyInfo.shop}`
+  );
+
   const redirectlinks = constructURLLink(location, shopifyInfo.theme.id);
   for (let key in redirectlinks) {
     if (key === "preview_link") {
